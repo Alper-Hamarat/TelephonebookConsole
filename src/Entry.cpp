@@ -1,5 +1,9 @@
 #include "Entry.hpp"
 
+Entry::Entry(string newName, string newTelNr) : name(newName), telNr(newTelNr){}
+
+Entry::Entry() : Entry("Kein Name","012345678" ){};
+
 string Entry::getName()
 {
     return this->name;
