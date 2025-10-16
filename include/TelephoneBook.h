@@ -4,7 +4,7 @@
 #include <vector>
 #include <optional>
 
-#include "Entry.hpp"
+#include "Entry.h"
 
 class TelephoneBook
 {

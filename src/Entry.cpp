@@ -1,4 +1,4 @@
-#include "Entry.hpp"
+#include "Entry.h"
 
 Entry::Entry(string newName, string newTelNr) : name(newName), telNr(newTelNr){}
 

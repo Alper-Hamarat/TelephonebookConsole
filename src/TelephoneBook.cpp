@@ -1,4 +1,4 @@
-#include "TelephoneBook.hpp"
+#include "TelephoneBook.h"
 
 #include <optional>
 
@@ -68,4 +68,5 @@ bool TelephoneBook::editEntry(string name, Entry newEntry)
             return true;
         }
     }
+    return false;
 }
