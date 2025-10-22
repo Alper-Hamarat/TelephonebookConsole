@@ -8,19 +8,23 @@ using namespace std;
 class Entry
 {
 private:
-    string name;
+    string vorname;
+    string nachname;
     string telNr;
 public:
-    Entry(string newName, string newTelNr);
+    Entry(string vorname, string nachname, string newTelNr);
     Entry();
     
-    string getName();
-    void setName(string newName);
+    string getVorname();
+    void setVorname(string newName);
+
+    string getNachname();
+    void setNachname(string newName);
 
     string getTelNr();
     void setTelNr(string newTelNr);
 
-    void printEntry();
+    virtual void printEntry();
 };
 
 #endif /* ENTRY_H */
