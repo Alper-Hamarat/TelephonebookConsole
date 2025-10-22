@@ -1,40 +1,40 @@
 #include "Entry.h"
 
-Entry::Entry(string vorname, string nachname, string telNr) : vorname(vorname), nachname(nachname), telNr(telNr){}
+Entry::Entry(string firstName, string lastName, string telNr) : firstName(firstName), lastName(lastName), telNr(telNr){}
 
 Entry::Entry() : Entry("Max","Mustermann","012345678" ){};
 
-string Entry::getVorname()
+string Entry::getFirstName()
 {
-    return this->vorname;
+    return this->firstName;
 }
 
-void Entry::setVorname(string newName)
+void Entry::setFirstName(string newName)
 {
     if(newName != "")
     {
-        this->vorname = newName;
+        this->firstName = newName;
     }
     else
     {
-        cout <<  "Name: " << newName <<  " has not been assigned to entry" << endl;
+        cout <<  "First Name: " << newName <<  " has not been assigned to entry" << endl;
     }
 }
 
-string Entry::getNachname()
+string Entry::getLastName()
 {
-    return this->nachname;
+    return this->lastName;
 }
 
-void Entry::setNachname(string newName)
+void Entry::setLastName(string newName)
 {
     if(newName != "")
     {
-        this->nachname = newName;
+        this->lastName = newName;
     }
     else
     {
-        cout <<  "Name: " << newName <<  " has not been assigned to entry" << endl;
+        cout <<  "Last Name: " << newName <<  " has not been assigned to entry" << endl;
     }
 }
 

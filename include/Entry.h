@@ -8,18 +8,18 @@ using namespace std;
 class Entry
 {
 private:
-    string vorname;
-    string nachname;
+    string firstName;
+    string lastName;
     string telNr;
 public:
-    Entry(string vorname, string nachname, string newTelNr);
+    Entry(string firstName, string lastName, string newTelNr);
     Entry();
     
-    string getVorname();
-    void setVorname(string newName);
+    string getFirstName();
+    void setFirstName(string newName);
 
-    string getNachname();
-    void setNachname(string newName);
+    string getLastName();
+    void setLastName(string newName);
 
     string getTelNr();
     void setTelNr(string newTelNr);
