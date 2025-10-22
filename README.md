@@ -1,6 +1,6 @@
 # The Project
 
-This project is intended as a 2 player Tic Tac Toe console game.
+This project is intended as a console program for an adressbook.
 
 # How to get started
 
