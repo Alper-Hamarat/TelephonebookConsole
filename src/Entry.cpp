@@ -58,7 +58,7 @@ void Entry::setTelNr(string newTelNr)
 void Entry::printEntry()
 {
     cout << "Entry information: " << endl;
-    cout << "Vorname: " << this->vorname << endl;
-    cout << "Nachname: " << this->nachname << endl;
+    cout << "Vorname: " << this->firstName << endl;
+    cout << "Nachname: " << this->lastName << endl;
     cout << "TelNr: " << this->telNr << endl;
 }
