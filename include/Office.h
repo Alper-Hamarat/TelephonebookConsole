@@ -11,7 +11,7 @@ class Office : public Entry
 protected:
     string designation;
 public:
-    Office(string name, string telNr, string address, string contactPerson);
+    Office(string name, string telNr, string address, string designation);
     Office();
     string getDesignation();
     void setDesignation(string newDesignation);
