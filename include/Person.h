@@ -18,6 +18,7 @@ public:
     string getLastName();
     void setLastName(string newName);
 
+    void printEntry() override;
 };
 
-#endif /*PERSON_H*/
+#endif /* PERSON_H */

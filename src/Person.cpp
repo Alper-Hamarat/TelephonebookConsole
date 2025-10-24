@@ -1,18 +1,13 @@
 #include "Person.h"
-Person::Person(string firstName, string lastName, string newTelNr, string newAddress)
+
+Person::Person(string firstName, string lastName, string newTelNr, string newAddress) : Entry::Entry(name, telNr, address)
 {
-    this->setFirstName(firstName);
-    this->setLastName(lastName);
-    this->setTelNr(newTelNr);
     this->setAddress(newAddress);
 }
 
 
-Person::Person()
+Person::Person() : Entry::Entry()
 {
-    this->setFirstName("Max");
-    this->setLastName("Mustermann");
-    this->setTelNr("01234567");
     this->setAddress("012345 Musterstadt");
 }
 
@@ -50,4 +45,13 @@ void Person::setLastName(string newName)
     {
         cout <<  "Last Name: " << newName <<  " has not been assigned to Person" << endl;
     }
+}
+
+void Person::printEntry()
+{
+    cout << "Entry information: " << endl;
+    cout << "First Name: " << this->firstName << endl;
+    cout << "Last Name: " << this->lastName << endl;
+    cout << "TelNr: " << this->telNr << endl;
+    cout << "Address: " << this->address << endl;
 }
