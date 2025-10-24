@@ -7,22 +7,22 @@ using namespace std;
 
 class Entry
 {
-private:
-    string firstName;
-    string lastName;
+protected:
+    string name;
     string telNr;
+    string address;
 public:
-    Entry(string firstName, string lastName, string newTelNr);
+    Entry(string name, string telNr, string address) : name(name), telNr(telNr), address(address){};
     Entry();
     
-    string getFirstName();
-    void setFirstName(string newName);
-
-    string getLastName();
-    void setLastName(string newName);
+    string getName();
+    void setName(string newName);
 
     string getTelNr();
     void setTelNr(string newTelNr);
+
+    string getAddress();
+    void setAddress(string newAddress);
 
     virtual void printEntry();
 };

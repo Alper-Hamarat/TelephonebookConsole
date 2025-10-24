@@ -1,40 +1,23 @@
 #include "Entry.h"
 
-Entry::Entry(string firstName, string lastName, string telNr) : firstName(firstName), lastName(lastName), telNr(telNr){}
+Entry::Entry(string name, string telNr, string address) : name(name), telNr(telNr), address(address){}
 
 Entry::Entry() : Entry("Max","Mustermann","012345678" ){};
 
-string Entry::getFirstName()
+string Entry::getName()
 {
-    return this->firstName;
+    return this->name;
 }
 
-void Entry::setFirstName(string newName)
+void Entry::setName(string newName)
 {
     if(newName != "")
     {
-        this->firstName = newName;
+        this->name = newName;
     }
     else
     {
-        cout <<  "First Name: " << newName <<  " has not been assigned to entry" << endl;
-    }
-}
-
-string Entry::getLastName()
-{
-    return this->lastName;
-}
-
-void Entry::setLastName(string newName)
-{
-    if(newName != "")
-    {
-        this->lastName = newName;
-    }
-    else
-    {
-        cout <<  "Last Name: " << newName <<  " has not been assigned to entry" << endl;
+        cout <<  "Name: " << newName <<  " has not been assigned to entry" << endl;
     }
 }
 
@@ -55,10 +38,27 @@ void Entry::setTelNr(string newTelNr)
     }
 }
 
+string Entry::getAddress()
+{
+    return this->address;
+}
+
+void Entry::setAddress(string address)
+{
+    if(address != "")
+    {
+        this->address = address;
+    }
+    else
+    {
+        cout <<  "Address: " << address <<  " has not been assigned to entry" << endl;
+    }
+}
+
 void Entry::printEntry()
 {
     cout << "Entry information: " << endl;
-    cout << "Vorname: " << this->firstName << endl;
-    cout << "Nachname: " << this->lastName << endl;
+    cout << "Name: " << this->name << endl;
     cout << "TelNr: " << this->telNr << endl;
+    cout << "Address: " << this->address << endl;
 }
