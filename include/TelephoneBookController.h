@@ -2,22 +2,27 @@
 #define TELEPHONEBOOKCONTROLLER_H
 
 #include <iostream>
-#include "TelephoneBook.h"
+
+#include "ViewListener.h"
+#include "TelephoneBookModel.h"
+#include "TelephoneBookView.h"
 
 
 using namespace std;
 
-class TelephoneBookController
+class TelephoneBookController : public ViewListener
 {
-private:
-    TelephoneBook phoneBook;
 
+private:
+    TelephoneBookView * view;
+    TelephoneBookModel * model;
 public:
-    TelephoneBookController();
-    void listEntries();
-    void listEntry();
-    void addEntry();  
-    void removeEntry();
+    string getUserInput(string textToDisplay) override; 
+    char getMenuInput(string textToDisplay) override; 
+    
+    TelephoneBookController(TelephoneBookView * view , TelephoneBookModel * model);
+    void run();
+
 
 };
 
