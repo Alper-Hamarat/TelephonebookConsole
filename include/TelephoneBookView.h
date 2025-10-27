@@ -8,8 +8,13 @@ using namespace std;
 
 class TelephoneBookView
 {
+
+private:
+    ViewListener * listener;
+
+public:
     void showMenu(); 
-    char showTelephoneBook(); 
+    void showTelephoneBook(); 
     void setListener(ViewListener * listener);
 };
 
