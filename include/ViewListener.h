@@ -7,8 +7,8 @@ using namespace std;
 
 class ViewListener
 {
-    virtual string getUserInput() = 0; 
-    virtual char getMenuInput() = 0; 
+    virtual string getUserInput(string textToDisplay) = 0; 
+    virtual char getMenuInput(string textToDisplay) = 0; 
 };
 
 #endif /* VIEWLISTENER_H */
