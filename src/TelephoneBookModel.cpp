@@ -2,8 +2,6 @@
 
 #include <optional>
 
-
-
 vector<Entry> TelephoneBookModel::getEntries()
 {
     return listEntries;
