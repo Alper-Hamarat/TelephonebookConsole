@@ -12,7 +12,7 @@ protected:
     string telNr;
     string address;
 public:
-    Entry(string name, string telNr, string address) : name(name), telNr(telNr), address(address){};
+    Entry(string name, string telNr, string address);
     Entry();
     
     string getName();

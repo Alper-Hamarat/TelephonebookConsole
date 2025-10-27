@@ -1,14 +1,13 @@
 #include "Company.h"
 #include "Entry.h"
 
-Company::Company(string name, string telNr, string address, string contactPerson) : Entry::Entry(name, telNr, address)
+Company::Company(string name, string telNr, string address, string contactPerson) : Entry(name, telNr, address)
 {
     this->setContactPerson(contactPerson);
 }
-Company::Company()
-{
-    Entry::Entry();
-}
+Company::Company() : Entry() {}
+
+
 string Company::getContactPerson()
 {
     return this->contactPerson;

@@ -1,6 +1,6 @@
 #include "Person.h"
 
-Person::Person(string firstName, string lastName, string newTelNr, string newAddress) : Entry::Entry(name, telNr, address)
+Person::Person(string firstName, string lastName, string newTelNr, string newAddress) : Entry(name, telNr, address)
 {
     this->setAddress(newAddress);
 }
