@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++20 -Iinclude
 
-SRC = src/main.cpp src/TelephoneBook.cpp src/UserIO.cpp src/TelephoneBookController.cpp src/Entry.cpp 
+SRC = src/main.cpp src/Entry.cpp src/TelephoneBookController.cpp src/TelephoneBookModel.cpp src/TelephoneBookView.cpp src/Company.cpp src/Office.cpp src/Person.cpp
 OBJ = $(patsubst src/%.cpp, build/%.o, $(SRC))
 TARGET = main
 
