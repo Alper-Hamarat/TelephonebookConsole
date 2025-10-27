@@ -1,20 +1,18 @@
-#include "TelephoneBook.h"
+#include "TelephoneBookModel.h"
 
 #include <optional>
 
 
 
-vector<Entry> TelephoneBook::getEntries()
+vector<Entry> TelephoneBookModel::getEntries()
 {
     return listEntries;
 }
 
-optional<Entry> TelephoneBook::getEntry(string name)
+optional<Entry> TelephoneBookModel::getEntry(string name)
 {
     //Build iterator of type Vector Entry
-    vector<Entry>::iterator it;
-
-    for (it = listEntries.begin(); it != listEntries.end(); ++it)
+    for (auto it = listEntries.begin(); it != listEntries.end(); it++)
     {
         if(it->getName() == name)
         {
@@ -24,27 +22,25 @@ optional<Entry> TelephoneBook::getEntry(string name)
     return nullopt;
 }
 
-bool TelephoneBook::addEntry(string name, string telNr)
+bool TelephoneBookModel::addEntry(Entry & newEntry)
 {
     //Check if entry already exists
-    if(getEntry(name) != nullopt)
+    if(getEntry(newEntry.getName()) != nullopt)
     {
         return false;
     }
     else
     {
-        Entry newEntry(name, telNr);
         listEntries.push_back(newEntry);
         return true;
     }
 }
 
-bool TelephoneBook::removeEntry(string name)
+bool TelephoneBookModel::removeEntry(string name)
 {
     //Build iterator of type Vector Entry
-    vector<Entry>::iterator it;
 
-    for (it = listEntries.begin(); it != listEntries.end(); ++it)
+    for (auto it = listEntries.begin(); it != listEntries.end(); ++it)
     {
         if(it->getName() == name)
         {
@@ -55,12 +51,10 @@ bool TelephoneBook::removeEntry(string name)
     return false;
 }
 
-bool TelephoneBook::editEntry(string name, Entry newEntry)
+bool TelephoneBookModel::editEntry(string name, Entry newEntry)
 {
     //Build iterator of type Vector Entry
-    vector<Entry>::iterator it;
-
-    for (it = listEntries.begin(); it != listEntries.end(); ++it)
+    for (auto it = listEntries.begin(); it != listEntries.end(); ++it)
     {
         if(it->getName() == name)
         {

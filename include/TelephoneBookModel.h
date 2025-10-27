@@ -1,12 +1,12 @@
-#ifndef TELEPHONEBOOK_H
-#define TELEPHONEBOOK_H
+#ifndef TELEPHONEBOOKMODEL_H
+#define TELEPHONEBOOKMODEL_H
 
 #include <vector>
 #include <optional>
 
 #include "Entry.h"
 
-class TelephoneBook
+class TelephoneBookModel
 {
 private:
     vector<Entry> listEntries;
@@ -15,9 +15,9 @@ public:
 
     vector<Entry> getEntries();
     optional<Entry> getEntry(string name);
-    bool addEntry(string name, string telNr);
+    bool addEntry(Entry & newEntry);
     bool removeEntry(string name);
     bool editEntry(string name, Entry newEntry);
 };
 
-#endif /* TELEPHONEBOOK_H */
+#endif /* TELEPHONEBOOKMODEL_H */
