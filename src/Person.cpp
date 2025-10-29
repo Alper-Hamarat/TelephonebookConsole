@@ -49,7 +49,7 @@ void Person::setLastName(string newName)
 
 void Person::printEntry()
 {
-    cout << "Entry information: " << endl;
+    cout << "Person information: " << endl;
     cout << "First Name: " << this->firstName << endl;
     cout << "Last Name: " << this->lastName << endl;
     cout << "TelNr: " << this->telNr << endl;

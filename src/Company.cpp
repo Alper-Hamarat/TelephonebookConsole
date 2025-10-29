@@ -26,6 +26,9 @@ void Company::setContactPerson(string newContactPerson)
 
 void Company::printEntry()
 {
-    Entry::printEntry();
+    cout << "Company information: " << endl;
+    cout << "Name: " << this->name << endl;
+    cout << "TelNr: " << this->telNr << endl;
+    cout << "Address: " << this->address << endl;
     cout << "Contact Person: " << this->contactPerson << endl;
 }
