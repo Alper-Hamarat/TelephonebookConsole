@@ -41,11 +41,11 @@ void TelephoneBookController::run()
         {
         case '1':
         {
-            vector<Entry> entries = this->model->getEntries();
+            vector<Entry *> entries = this->model->getEntries();
             /* Print the Telephone Book */
             for(auto i = entries.begin(); i < entries.end(); i++)
             {
-                i->printEntry();
+                (*i)->printEntry();
             }
             break;
         }

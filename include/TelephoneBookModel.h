@@ -9,15 +9,15 @@
 class TelephoneBookModel
 {
 private:
-    vector<Entry> listEntries;
+    vector<Entry *> listEntries;
 
 public:
 
-    vector<Entry> getEntries();
-    optional<Entry> getEntry(string name);
+    vector<Entry *> getEntries();
+    Entry * getEntry(string name);
     bool addEntry(Entry & newEntry);
     bool removeEntry(string name);
-    bool editEntry(string name, Entry newEntry);
+    bool editEntry(string name, Entry * newEntry);
 };
 
 #endif /* TELEPHONEBOOKMODEL_H */
