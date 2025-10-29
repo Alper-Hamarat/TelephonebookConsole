@@ -1,10 +1,9 @@
 #include "Office.h"
 #include "Entry.h"
 
-Office::Office(string name, string telNr, string address, string designation) : Entry(name, telNr, address)
-{
-    this->setDesignation(designation);
-}
+Office::Office(string name, string telNr, string address, string designation) : Entry(name, telNr, address), designation(designation){}
+
+Office::Office() : Office("Some Office", "0123456789", "Some Address", "Some Designation"){}
 
 string Office::getDesignation()
 {
