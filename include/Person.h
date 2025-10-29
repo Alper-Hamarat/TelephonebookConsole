@@ -18,6 +18,8 @@ public:
     string getLastName();
     void setLastName(string newName);
 
+    string getName() override;
+
     void printEntry() override;
 };
 

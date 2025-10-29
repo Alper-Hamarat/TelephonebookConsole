@@ -15,7 +15,7 @@ public:
     Entry(string name, string telNr, string address);
     Entry();
     
-    string getName();
+    virtual string getName();
     void setName(string newName);
 
     string getTelNr();

@@ -11,6 +11,11 @@ Person::Person() : Entry::Entry()
     this->setAddress("012345 Musterstadt");
 }
 
+//Is used to override the standard getName function for the entry class to help the getEntry funciton
+string Person::getName()
+{
+    return this->getFirstName() + " " + this->getLastName();
+}
 
 string Person::getFirstName()
 {
