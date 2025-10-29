@@ -1,6 +1,8 @@
 #include "TelephoneBookController.h"
 
-#include "UserIO.h"
+#include "Company.h"
+#include "Office.h"
+#include "Person.h"
 
 TelephoneBookController::TelephoneBookController(TelephoneBookView * view , TelephoneBookModel * model)
 {
@@ -34,18 +36,6 @@ void TelephoneBookController::run()
         //Get Input from user which actions to perform
         menuInput = this->getMenuInput("Which action would you like to perform?");
         //Switch based on user input
-        /*
-        void TelephoneBookView::showMenu()
-        {
-            cout << "Welcome to the Telephone Book: " << endl;
-            cout << "To navigate press the Key on the Keyboard and press Enter." << endl;
-            cout << "1: Show Telephone book" << endl;
-            cout << "2: Get an entry from the Telephone book" << endl;
-            cout << "3: Add an entry in the Telephone book" << endl;
-            cout << "4: Remove an entry in the Telephone book" << endl;
-            cout << "5: Edit an entry in the Telephone book" << endl;
-            cout << "9: Exit the Program" << endl;
-        } */
 
         switch (menuInput)
         {
@@ -67,19 +57,51 @@ void TelephoneBookController::run()
         }
         case '3':
         {
-            string nameToAdd = this->getUserInput("Please enter the name of the user to add");
-            string telNrToAdd = this->getUserInput("Please enter the Telephone number of the user to add");
-            string addressToAdd = this->getUserInput("Please enter the Address of the user to add");
+            char entryType = this->getMenuInput("Please enter:\n (C) for Company, (O) for Office, (P) for Person");
 
-            Entry newEntry(nameToAdd, telNrToAdd, addressToAdd);
+            Entry * newEntry;
 
-            this->model->addEntry(newEntry);
+            string nameToAdd = "";
+            string telNrToAdd = "";
+            string addressToAdd = "";
+            string designation = "";
+            string contactPerson = "";
+            string firstName = "";
+            string lastName = "";
+            switch (entryType)
+            {
+            case 'C':
+                nameToAdd = this->getUserInput("Please enter the Company Name");
+                telNrToAdd = this->getUserInput("Please enter the Company Phone Nr");
+                addressToAdd = this->getUserInput("Please enter the Company Address");
+                contactPerson = this->getUserInput("Please enther the Company Contact Person ");
+                newEntry = new Company(nameToAdd, telNrToAdd, addressToAdd, contactPerson);
+                break;
+            case 'O':
+                nameToAdd = this->getUserInput("Please enter the Office Name");
+                telNrToAdd = this->getUserInput("Please enter the Office Phone Nr");
+                addressToAdd = this->getUserInput("Please enter the Office Address");
+                designation = this->getUserInput("Please enter the Office designation");
+                newEntry = new Office(nameToAdd, telNrToAdd, addressToAdd, designation);
+                break;
+            case 'P':
+                firstName = this->getUserInput("Please enter the Persons First Name");
+                lastName = this->getUserInput("Please enter the Persons Last Name");
+                telNrToAdd = this->getUserInput("Please enter the Office Phone Nr");
+                addressToAdd = this->getUserInput("Please enter the Office Address");
+                newEntry = new Person(firstName, lastName, telNrToAdd, addressToAdd);
+                break;
+            default:
+                break;
+            }
+
+            this->model->addEntry(*newEntry);
             break;
         }
         case '4':
         {
-            string nameToRemoved = this->getUserInput("Please enter the name of the user to remove");
-            this->model->removeEntry(nameToRemoved);
+            string nameToRemove = this->getUserInput("Please enter the name of the user to remove");
+            this->model->removeEntry(nameToRemove);
             break;
         }
         default:
