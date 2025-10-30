@@ -42,7 +42,6 @@ bool TelephoneBookModel::removeEntry(string name)
     {
         if((*it)->getName() == name)
         {
-            delete *it;
             listEntries.erase(it);
             return true;
         }
@@ -57,7 +56,6 @@ bool TelephoneBookModel::editEntry(string name, Entry * newEntry)
     {
         if((*it)->getName() == name)
         {
-            delete *it;
             *it = newEntry;
             return true;
         }
