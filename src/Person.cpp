@@ -1,14 +1,15 @@
 #include "Person.h"
 
-Person::Person(string firstName, string lastName, string newTelNr, string newAddress) : Entry(name, telNr, address)
+Person::Person(string firstName, string lastName, string newTelNr, string newAddress) : Entry(firstName + lastName, newTelNr, newAddress)
 {
     this->setAddress(newAddress);
 }
 
 
-Person::Person() : Entry::Entry()
+Person::Person() : Entry("Max Mustermann", "0123456", "012345 Musterstadt")
 {
-    this->setAddress("012345 Musterstadt");
+    this->setFirstName("Max");
+    this->setLastName("Mustermann");
 }
 
 //Is used to override the standard getName function for the entry class to help the getEntry funciton
