@@ -42,10 +42,17 @@ void TelephoneBookController::run()
         case '1':
         {
             vector<Entry *> entries = this->model->getEntries();
-            /* Print the Telephone Book */
-            for(auto i = entries.begin(); i < entries.end(); i++)
+            if(entries.empty())
             {
-                (*i)->printEntry();
+                cout << "The telephoneBook is currently empty " << endl;
+            }
+            else
+            {
+                /* Print the Telephone Book */
+                for(auto i = entries.begin(); i < entries.end(); i++)
+                {
+                    (*i)->printEntry();
+                }
             }
             break;
         }
