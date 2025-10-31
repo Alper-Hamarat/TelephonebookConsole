@@ -24,9 +24,11 @@ void Office::setDesignation(string newDesignation)
 
 void Office::printEntry()
 {
+    cout << "-------------------------------" << endl;
     cout << "Office information: " << endl;
     cout << "Name: " << this->name << endl;
     cout << "TelNr: " << this->telNr << endl;
     cout << "Address: " << this->address << endl;
     cout << "Designation: " << this->designation << endl;
+    cout << "-------------------------------" << endl;
 }

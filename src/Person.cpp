@@ -2,7 +2,8 @@
 
 Person::Person(string firstName, string lastName, string newTelNr, string newAddress) : Entry(firstName + lastName, newTelNr, newAddress)
 {
-    this->setAddress(newAddress);
+    this->setFirstName(firstName);
+    this->setLastName(lastName);
 }
 
 
@@ -55,9 +56,11 @@ void Person::setLastName(string newName)
 
 void Person::printEntry()
 {
+    cout << "-------------------------------" << endl;
     cout << "Person information: " << endl;
     cout << "First Name: " << this->firstName << endl;
     cout << "Last Name: " << this->lastName << endl;
     cout << "TelNr: " << this->telNr << endl;
     cout << "Address: " << this->address << endl;
+    cout << "-------------------------------" << endl;
 }
