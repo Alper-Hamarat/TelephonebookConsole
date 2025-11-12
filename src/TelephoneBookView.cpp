@@ -6,7 +6,7 @@ using namespace std;
 
 void TelephoneBookView::showMenu()
 {
-    cout << endl <<"-------------------------------" << endl;
+    cout << endl << "-------------------------------" << endl;
     cout << "Welcome to the Telephone Book: " << endl;
     cout << "To navigate press the Key on the Keyboard and press Enter." << endl;
     cout << "1: Show Telephone book" << endl;

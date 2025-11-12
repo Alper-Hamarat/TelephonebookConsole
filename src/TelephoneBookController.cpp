@@ -59,7 +59,15 @@ void TelephoneBookController::run()
         case '2':
         {
             string nameToGet = this->getUserInput("Please enter the name of the user");
-            this->model->getEntry(nameToGet);
+            Entry * entry = this->model->getEntry(nameToGet);
+            if(entry == NULL)
+            {
+                cout << "No Entry found for: " << nameToGet << endl;
+            }
+            else
+            {
+                entry->printEntry();
+            }
             break;
         }
         case '3':
